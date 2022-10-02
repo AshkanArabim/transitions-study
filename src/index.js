@@ -1,10 +1,8 @@
 import("./reset.css");
 import("./style.css");
+import dropdown from "./modules/dropdown";
 
-const navBtns = Array.from(document.querySelectorAll(".navbtn"));
+const navBar = document.querySelector("nav");
+const navBtns = Array.from(document.querySelectorAll("nav>ul>li"));
 
-for (navBtnIndex in navBtns) {
-  navBtnIndex.addEventListener("hover", () => {
-    navBtns[navBtnIndex].classList.remove("");
-  });
-}
+dropdown(navBar, navBtns);
